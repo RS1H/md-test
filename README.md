@@ -19,8 +19,8 @@ Semester 2, 2025-2026
 
 ## 👥 Group
 - **Group Name:** B1
-- **Course Code:** ITNE352
-- **Section:** Network Programming
+- **Course Code:** ITNE352 - Network Programming
+- **Section:** 2
 - **Members:**
   - 202201419 - Mohammed Alhitar
   - 202201496 - Rayan Alharthy
