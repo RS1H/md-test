@@ -8,16 +8,16 @@ Rayan Alharthy   - 202201496
 
 ---
 
-## 📋 Project Title
+## Project Title
 Recipe Discovery System - Client/Server Project
 
-## 📖 Project Description
+## Project Description
 A Python client-server application that allows users to browse food recipes from TheMealDB API. The server fetches reference data once at startup, caches it in memory, and serves multiple clients at the same time using multithreading. Clients can search recipes by name, filter by category, area, or ingredient, get a random recipe, or view reference lists.
 
-## 📅 Semester
+## Semester
 Semester 2, 2025-2026
 
-## 👥 Group
+## Group
 - **Group Number:** B1
 - **Course Code:** ITNE352 - Network Programming
 - **Section:** 2
@@ -27,7 +27,7 @@ Semester 2, 2025-2026
 
 ---
 
-## 📑 Table of Contents
+## Table of Contents
 1. [Requirements](#requirements)
 2. [How to Run](#how-to-run)
 3. [The Scripts](#the-scripts)
@@ -38,7 +38,7 @@ Semester 2, 2025-2026
 
 ---
 
-## ⚙️ Requirements
+## Requirements
 
 ### Software
 - Python 3.8 or higher
@@ -61,7 +61,7 @@ git clone https://github.com/RS1H/ITNE352-Project-Group-B1.git
 
 ---
 
-## 🚀 How to Run
+## How to Run
 
 ### Step 1: Run the Server
 Open a terminal and run:
@@ -93,7 +93,7 @@ Enter your name when asked, and the main menu will appear.
 
 ---
 
-## 🗂️ The Scripts
+## The Scripts
 
 ### server.py
 - Loads categories, areas, and ingredients from TheMealDB at startup and saves them to `reference_B1.json`.
@@ -109,7 +109,7 @@ Enter your name when asked, and the main menu will appear.
 
 ---
 
-## 🔄 Hybrid Pattern Justification
+## Hybrid Pattern Justification
 
 The system uses two different data-handling patterns:
 
@@ -123,7 +123,7 @@ This hybrid approach reduces unnecessary API calls while keeping recipe data cur
 
 ---
 
-## ✅ Acknowledgments
+## Acknowledgments
 
 We would like to thank Dr. Mohammed Almeer for providing the project guidelines, slides, and continuous support throughout the course.
 
@@ -131,13 +131,13 @@ We also acknowledge TheMealDB (https://www.themealdb.com) for providing a free p
 
 ---
 
-## 📝 Conclusion
+## Conclusion
 
 This project gave us hands-on experience with TCP sockets, JSON, multithreading, REST APIs, and file I/O in Python. We learned how to design a client-server system, handle multiple clients at the same time, and manage shared resources properly. Working with GitHub also taught us the importance of version control and collaboration in real software projects.
 
 ---
 
-## 📚 Resources
+## Resources
 
 - [TheMealDB API Documentation](https://www.themealdb.com/api.php)
 - [Python Socket Documentation](https://docs.python.org/3/library/socket.html)
