@@ -1,7 +1,6 @@
 # ITNE352-Project-Group-B1
 
 202201419 - Mohammed Alhitar
-
 202201496 - Rayan Alharthy
 
 ---
