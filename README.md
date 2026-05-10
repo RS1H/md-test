@@ -1,4 +1,4 @@
-# RS1H-ITNE352-Project-Group-B1
+# ITNE352-Project-Group-B1
 
 202201419 - Mohammed Alhitar
 
