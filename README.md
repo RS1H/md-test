@@ -18,7 +18,7 @@ A Python client-server application that allows users to browse food recipes from
 Semester 2, 2025-2026
 
 ## 👥 Group
-- **Group Name:** B1
+- **Group Number:** B1
 - **Course Code:** ITNE352 - Network Programming
 - **Section:** 2
 - **Members:**
