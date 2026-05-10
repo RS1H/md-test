@@ -123,7 +123,7 @@ This hybrid approach reduces unnecessary API calls while keeping recipe data cur
 
 ---
 
-## 🙏 Acknowledgments
+## ✅ Acknowledgments
 
 We would like to thank Dr. Mohammed Almeer for providing the project guidelines, slides, and continuous support throughout the course.
 
