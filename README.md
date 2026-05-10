@@ -94,36 +94,16 @@ Enter your name when asked, and the main menu will appear.
 ## The Scripts
 
 ### server.py
-The server script does the following:
-- Loads three reference lists (categories, areas, ingredients) from TheMealDB at startup.
-- Saves them to `reference_B1.json`.
-- Opens a TCP socket on `127.0.0.1:50555` and listens for clients.
-- Uses `threading` to handle 3 clients at the same time.
-- Receives JSON requests from each client and returns JSON responses.
-- Saves every recipe response to a file named `<client_name>_<option>_B1.json`.
-
-**Main functions:**
-- `fetch_list(endpoint)` - calls TheMealDB and returns JSON data.
-- `load_reference_cache()` - loads and saves the three reference lists.
-- `extract_brief(meal)` - extracts ID, name, and thumbnail from a meal.
-- `extract_full(meal)` - extracts full details with ingredients and measures.
-- `handle_request(conn, client_name, request)` - handles each action from the client.
-- `connection_thread(conn, addr)` - runs in a thread for each client.
+- Loads categories, areas, and ingredients from TheMealDB at startup and saves them to `reference_B1.json`.
+- Opens a TCP socket and handles up to 3 clients simultaneously using threads.
+- Receives JSON requests from clients and sends back JSON responses.
+- Saves every recipe response to `<client_name>_<option>_B1.json`.
 
 ### client.py
-The client script does the following:
-- Asks for the user's name.
-- Connects to the server using TCP.
+- Connects to the server and sends the user's name.
 - Shows three menus: Main, Recipes, and Reference.
-- Validates user input against allowed categories and areas before sending.
-- Sends JSON requests to the server and displays the JSON responses.
-- Closes the connection when the user chooses Quit.
-
-**Main functions:**
-- `send_request(sock, action, value)` - sends a JSON request to the server.
-- `receive_response(sock)` - receives and parses a JSON response.
-- `display_brief_list(meals)` - shows a numbered list of meals.
-- `display_full_details(meal)` - shows full details of one meal.
+- Validates input before sending requests.
+- Displays results in a clear format.
 
 ---
 
