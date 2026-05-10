@@ -1,6 +1,6 @@
 # ITNE352-Project-Group-B1
 
-![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)![Socket](https://img.shields.io/badge/Socket-TCP-green?style=for-the-badge)![API](https://img.shields.io/badge/API-TheMealDB-orange?style=for-the-badge)
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)![Socket](https://img.shields.io/badge/Socket-TCP-green?style=for-the-badge)![API](https://img.shields.io/badge/API-TheMealDB-orange?style=for-the-badge)![TLS](https://img.shields.io/badge/Security-TLS%2FSSL-red?style=for-the-badge)
 
 Mohammed Alhitar - 202201419
 
@@ -32,9 +32,10 @@ Semester 2, 2025-2026
 2. [How to Run](#how-to-run)
 3. [The Scripts](#the-scripts)
 4. [Hybrid Pattern Justification](#hybrid-pattern-justification)
-5. [Acknowledgments](#acknowledgments)
-6. [Conclusion](#conclusion)
-7. [Resources](#resources)
+5. [Additional Concept - TLS/SSL](#additional-concept---tlsssl)
+6. [Acknowledgments](#acknowledgments)
+7. [Conclusion](#conclusion)
+8. [Resources](#resources)
 
 ---
 
@@ -50,6 +51,7 @@ The project uses standard libraries that come with Python:
 - `json` - for parsing API responses
 - `threading` - for handling multiple clients
 - `urllib.request` - for HTTP requests to TheMealDB
+- `ssl` - for TLS/SSL encryption
 
 ### Setup Steps
 1. Clone the repository:
@@ -123,6 +125,37 @@ This hybrid approach reduces unnecessary API calls while keeping recipe data cur
 
 ---
 
+## Additional Concept - TLS/SSL
+
+TLS (Transport Layer Security) is a protocol that encrypts all data sent between the client and the server. Without TLS, anyone monitoring the network with a tool like Wireshark can read the data in plain text. With TLS, the data appears as encrypted bytes and cannot be read.
+
+### How it works in this project
+The server loads a self-signed certificate (`server.crt`) and a private key (`server.key`) at startup. The socket is then wrapped with an SSL context before accepting connections. The client also wraps its socket with an SSL context before connecting.
+
+### Server side
+```python
+ssl_context = ssl.SSLContext(ssl.PROTOCOL_TLS_SERVER)
+ssl_context.load_cert_chain('server.crt', 'server.key')
+server_socket = ssl_context.wrap_socket(server_socket, server_side=True)
+```
+
+### Client side
+```python
+ssl_context = ssl.SSLContext(ssl.PROTOCOL_TLS_CLIENT)
+ssl_context.check_hostname = False
+ssl_context.verify_mode = ssl.CERT_NONE
+client_socket = ssl_context.wrap_socket(client_socket)
+```
+
+### Generating the certificate
+```
+openssl req -x509 -newkey rsa:2048 -keyout server.key -out server.crt -days 365 -nodes -subj "/CN=localhost"
+```
+
+The Wireshark capture confirms that all application data is encrypted using TLSv1.3 with the cipher `TLS_AES_256_GCM_SHA384`.
+
+---
+
 ## Acknowledgments
 
 We would like to thank Dr. Mohammed Almeer for providing the project guidelines, slides, and continuous support throughout the course.
@@ -142,4 +175,5 @@ This project gave us hands-on experience with TCP sockets, JSON, multithreading,
 - [TheMealDB API Documentation](https://www.themealdb.com/api.php)
 - [Python Socket Documentation](https://docs.python.org/3/library/socket.html)
 - [Python Threading Documentation](https://docs.python.org/3/library/threading.html)
+- [Python SSL Documentation](https://docs.python.org/3/library/ssl.html)
 - ITNE352 Course Slides (Ch1 - Ch9)
