@@ -1,7 +1,6 @@
 # ITNE352-Project-Group-B1
 
-![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white) ![Socket](https://img.shields.io/badge/Socket-TCP-green?style=for-the-badge) ![API](https://img.shields.io/badge/API-TheMealDB-orange?style=for-the-badge)
-
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)![Socket](https://img.shields.io/badge/Socket-TCP-green?style=for-the-badge)![API](https://img.shields.io/badge/API-TheMealDB-orange?style=for-the-badge)
 202201419 - Mohammed Alhitar
 
 202201496 - Rayan Alharthy
